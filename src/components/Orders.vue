@@ -4,12 +4,14 @@ import style from './Orders.module.css'
 import { useData } from '../composables/useOrdersData';
 import { onMounted } from 'vue';
 import { useOrderStore } from '../store/ordersStore';
+import Pagination from '../components/Pagination.vue'
 
 const orderStore = useOrderStore();
-const { fetchData } = useData();
+const { fetchData, fetchPaginateData } = useData();
 
 onMounted(async () => {
   await fetchData()
+  await fetchPaginateData(1)
 })
 
 </script>
@@ -27,7 +29,7 @@ onMounted(async () => {
         </tr>
       </thead>
       <tbody 
-        v-for="order in orderStore.getOrders" 
+        v-for="order in orderStore.getPaginatedOrders" 
         :key="order"
       >
         <tr>
@@ -39,5 +41,6 @@ onMounted(async () => {
         </tr>
       </tbody>
     </table>
+    <Pagination />
   </div>
 </template>

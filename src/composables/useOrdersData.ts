@@ -20,7 +20,24 @@ export function useData() {
     }
   };
 
+  const fetchPaginateData = async (page?: Number) => {
+    try {
+        const response = await api.get('orders', {params: {
+            _sort: 'createdAt',
+            _order: 'desc',
+            _page: page
+        }});
+        orderStore.addPaginateOrders(response.data);
+        return response.data;
+      } catch (err) {
+        error.value = 'Erro ao buscar dados';
+      } finally {
+        loading.value = false;
+      }
+  }
+
   return {
+    fetchPaginateData,
     fetchData,
     data,
     error,

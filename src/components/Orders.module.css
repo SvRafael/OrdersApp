@@ -43,3 +43,10 @@ td {
       border-bottom-right-radius: 6px;
     }
 }
+
+.pagination{
+    width: 100%;
+    max-width: 1120px;
+    margin: 0rem auto 0;
+    padding: 0 0.5rem;
+}
