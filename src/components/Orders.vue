@@ -5,6 +5,7 @@ import { useData } from '../composables/useOrdersData';
 import { onMounted } from 'vue';
 import { useOrderStore } from '../store/ordersStore';
 import Pagination from '../components/Pagination.vue'
+import { dateFormatter, priceFormatter } from "../utils/formatter";
 
 const orderStore = useOrderStore();
 const { fetchData, fetchPaginateData } = useData();
@@ -34,10 +35,14 @@ onMounted(async () => {
       >
         <tr>
           <td>{{ order.order }}</td>
-          <td>{{ order.price }}</td>
+          <td :class="order.type == 'outcome' ? style.outcome : style.income">{{(order.type === 'outcome' ? '- ' : '') + priceFormatter.format(order.price) }}</td>
           <td>{{ order.status }}</td>
           <td>{{ order.category }}</td>
-          <td>{{ order.type }}</td>
+          <td>
+            <span :class="order.type == 'outcome' ? style.outcomeTag : style.incomeTag">
+              {{ order.type }}
+            </span>
+          </td>
         </tr>
       </tbody>
     </table>

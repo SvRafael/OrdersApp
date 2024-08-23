@@ -50,3 +50,29 @@ td {
     margin: 0rem auto 0;
     padding: 0 0.5rem;
 }
+
+.outcome{
+    color: red;
+    font-weight: bold;
+}
+
+.income{
+    color: green;
+    font-weight: bold;
+}
+
+.outcomeTag{
+    background: red;
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+
+.incomeTag{
+    background: green;
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
