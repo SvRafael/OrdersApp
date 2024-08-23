@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import style from './Summary.module.css'
+import { useSummary } from '../composables/useSummary';
+import { priceFormatter } from "../utils/formatter";
+
+const { getSummaryData }  = useSummary();
 </script>
 
 <template>
@@ -10,7 +14,7 @@ import style from './Summary.module.css'
           <span class="pi pi-search"></span>
         </header>
 
-        <strong>R$ 10,00</strong>
+        <strong>{{priceFormatter.format(getSummaryData().income)}}</strong>
       </div>
 
       <div :class="style.card">
@@ -19,7 +23,7 @@ import style from './Summary.module.css'
           <span class="pi pi-search"></span>
         </header>
 
-        <strong>R$ 10,00</strong>
+        <strong>{{priceFormatter.format(getSummaryData().outcome)}}</strong>
       </div>
 
       <div :class="style.card">
@@ -28,7 +32,7 @@ import style from './Summary.module.css'
           <span class="pi pi-search"></span>
         </header>
 
-        <strong>R$ 10,00</strong>
+        <strong>{{priceFormatter.format(getSummaryData().total)}}</strong>
       </div>
     </div>
 </template>
