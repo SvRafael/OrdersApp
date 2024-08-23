@@ -23,17 +23,17 @@
             :default-page="1"
         >
             <PaginationList
-            v-slot="{ items }"
-            :class="style.PaginationList"
+                v-slot="{ items }"
+                :class="style.PaginationList"
             >
             <PaginationFirst :class="style.Button">
-                <Icon icon="radix-icons:double-arrow-left" />
+                <i class="pi pi-angle-double-left" :class="style.arrow"></i>
             </PaginationFirst>
             <PaginationPrev
                 :style="{ marginRight: 16 }"
                 :class="style.Button"
             >
-                <Icon icon="radix-icons:chevron-left" />
+            <i class="pi pi-angle-left" :class="style.arrow"></i>
             </PaginationPrev>
             <template v-for="(page, index) in items">
                 <PaginationListItem
@@ -58,10 +58,10 @@
                 :style="{ marginLeft: 16 }"
                 :class="style.Button"
             >
-                <Icon icon="radix-icons:chevron-right" />
+                <i class="pi pi-angle-right" :class="style.arrow"></i>
             </PaginationNext>
             <PaginationLast :class="style.Button">
-                <Icon icon="radix-icons:double-arrow-right" />
+                <i class="pi pi-angle-double-right" :class="style.arrow"></i>
             </PaginationLast>
             </PaginationList>
         </PaginationRoot>
