@@ -36,6 +36,7 @@
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
 }
 
 .nav_item {
@@ -50,6 +51,7 @@
     padding: 0.825rem;
     border: 1px solid var(--pink-300);
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .nav_item a:hover {
@@ -57,3 +59,21 @@
     color: #fff;
     transition: background-color 0.1s;
 }
+
+.modalButton{
+    text-decoration: none;
+    color: #fff;
+    background: var(--gray-900);
+    font-size: 1em;
+    padding: 0.825rem;
+    border: 1px solid var(--pink-300);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.modalButton:hover {
+    background: var(--gray-700);
+    color: #fff;
+    transition: background-color 0.1s;
+}
+
