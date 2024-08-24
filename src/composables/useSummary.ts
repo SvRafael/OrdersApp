@@ -2,19 +2,19 @@ import { useOrderStore } from '../store/ordersStore';
 
 export function useSummary(){
     const orderStore = useOrderStore();
-    const summary = {
-        income: 0,
-        outcome: 0,
-        total: 0,
-    }
     const getSummaryData = function(){
+        const summary = {
+            income: 0,
+            outcome: 0,
+            total: 0,
+        }
         orderStore.getOrders.forEach(order => {
-            if(order.type === 'income'){
-                summary.total += order.price;
+            if(order.type === 'ENTRADA'){
                 summary.income += order.price;
+                summary.total += order.price;
               }else{
-                summary.total -= order.price;
                 summary.outcome += order.price;
+                summary.total -= order.price;
               }
         });
         return summary;

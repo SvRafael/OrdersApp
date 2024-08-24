@@ -35,11 +35,11 @@ onMounted(async () => {
       >
         <tr>
           <td>{{ order.order }}</td>
-          <td :class="order.type == 'outcome' ? style.outcome : style.income">{{(order.type === 'outcome' ? '- ' : '') + priceFormatter.format(order.price) }}</td>
+          <td :class="order.type == 'SAIDA' ? style.outcome : style.income">{{(order.type === 'SAIDA' ? '- ' : '') + priceFormatter.format(order.price) }}</td>
           <td>{{ order.status }}</td>
           <td>{{ order.category }}</td>
           <td>
-            <span :class="order.type == 'outcome' ? style.outcomeTag : style.incomeTag">
+            <span :class="order.type == 'SAIDA' ? style.outcomeTag : style.incomeTag">
               {{ order.type }}
             </span>
           </td>

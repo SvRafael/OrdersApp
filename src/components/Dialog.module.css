@@ -84,3 +84,40 @@
     clip: rect(0, 0, 0, 0); /* Oculta o elemento visualmente */
     border: 0; /* Remove qualquer borda que possa ser visível */
 }
+
+/* reset */
+button {
+  all: unset;
+}
+
+
+.RadioGroupItemNotCheck {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid var(--pink-300);
+    background: var(--gray-900);
+}
+
+.RadioGroupItemCheck {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid var(--pink-300);
+    background: var(--pink-300);
+}
+
+.RadioGroupRoot {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
