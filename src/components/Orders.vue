@@ -24,7 +24,6 @@ onMounted(async () => {
         <tr :class="style.tr">
           <th :class="style.th">Pedido</th>
           <th :class="style.th">Preço</th>
-          <th :class="style.th">Status</th>
           <th :class="style.th">Categoria</th>
           <th :class="style.th">Tipo</th>
         </tr>
@@ -36,7 +35,6 @@ onMounted(async () => {
         <tr>
           <td>{{ order.order }}</td>
           <td :class="order.type == 'SAIDA' ? style.outcome : style.income">{{(order.type === 'SAIDA' ? '- ' : '') + priceFormatter.format(order.price) }}</td>
-          <td>{{ order.status }}</td>
           <td>{{ order.category }}</td>
           <td>
             <span :class="order.type == 'SAIDA' ? style.outcomeTag : style.incomeTag">

@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import style from './Dialog.module.css'
+import api from '../axios'
+import { useDialogStore } from '../store/dialogStore';
+
 import {
   DialogClose,
   DialogContent,
@@ -11,10 +14,23 @@ import {
   RadioGroupRoot
 } from 'radix-vue'
 
+const dialogStore = useDialogStore();
+
 let order = ref<string>('');
 let price = ref<Number|string>('');
 let category = ref<string>('');
 let type = ref<string>('ENTRADA');
+
+const handleSubmit = async function() {
+    await api.post('orders', {
+        "order": order.value,
+        "price": price.value,
+        "category": category.value,
+        "type": type.value,
+        "create_at": new Date() 
+    })
+    dialogStore.setDialogOpen(false);
+}
 </script>
 
 <template>
@@ -28,7 +44,7 @@ let type = ref<string>('ENTRADA');
                 <DialogClose :class="style.DialogClose">
                     <span class="pi pi-times" />
                 </DialogClose>
-                <form  v-on:submit=>
+                <form  @submit.prevent="handleSubmit">
                     <label 
                         :class="style.sr_only" 
                         for="order" 

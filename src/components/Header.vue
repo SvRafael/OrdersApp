@@ -5,6 +5,13 @@ import {
   DialogTrigger,
 } from 'radix-vue'
 import NewOrderModal from '../components/Dialog.vue'
+import { useDialogStore } from '../store/dialogStore';
+
+const dialogStore = useDialogStore();
+
+const handleOpenModal = function () {
+  dialogStore.setDialogOpen(true)
+}
 </script>
 
 <template>
@@ -19,9 +26,9 @@ import NewOrderModal from '../components/Dialog.vue'
           <li>
             <DialogRoot>
               <DialogTrigger asChild>
-                <button :class="style.modalButton">Cadastrar Pedido</button>
+                <button @click="handleOpenModal" :class="style.modalButton">Cadastrar Pedido</button>
               </DialogTrigger>
-              <NewOrderModal />
+              <NewOrderModal v-if="dialogStore.getDialogIsOpen"/>
             </DialogRoot>
           </li>
         </ul>
