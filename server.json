@@ -47,6 +47,14 @@
       "type": "SAIDA",
       "create_at": "2024-08-24T14:46:31.725Z",
       "id": 6
+    },
+    {
+      "order": "Marmita",
+      "price": 45,
+      "category": "Comida",
+      "type": "SAIDA",
+      "create_at": "2024-08-24T18:36:07.713Z",
+      "id": 7
     }
   ]
 }
