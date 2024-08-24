@@ -5,7 +5,7 @@ import { useData } from '../composables/useOrdersData';
 import { onMounted } from 'vue';
 import { useOrderStore } from '../store/ordersStore';
 import Pagination from '../components/Pagination.vue'
-import { dateFormatter, priceFormatter } from "../utils/formatter";
+import { priceFormatter } from "../utils/formatter";
 
 const orderStore = useOrderStore();
 const { fetchData, fetchPaginateData } = useData();
