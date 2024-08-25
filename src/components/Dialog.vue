@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import style from './Dialog.module.css'
-import api from '../axios'
-import { useDialogStore } from '../store/dialogStore';
+import { useData } from '../composables/useOrdersData';
 
 import {
   DialogClose,
@@ -14,7 +13,7 @@ import {
   RadioGroupRoot
 } from 'radix-vue'
 
-const dialogStore = useDialogStore();
+const { createOrder } = useData();
 
 let order = ref<string>('');
 let price = ref<Number|string>('');
@@ -22,14 +21,7 @@ let category = ref<string>('');
 let type = ref<string>('ENTRADA');
 
 const handleSubmit = async function() {
-    await api.post('orders', {
-        "order": order.value,
-        "price": price.value,
-        "category": category.value,
-        "type": type.value,
-        "create_at": new Date() 
-    })
-    dialogStore.setDialogOpen(false);
+    createOrder(order.value, price.value, category.value, type.value);
 }
 </script>
 

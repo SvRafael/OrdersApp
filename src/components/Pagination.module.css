@@ -50,12 +50,12 @@ button {
     margin: 0rem auto 0;
     padding: 0 0.5rem;
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente o conteúdo */ 
+    justify-content: center;
 }
 
 .PaginationList {
-    display: flex; /* Faz com que os itens da paginação sejam exibidos em linha */
-    list-style: none; /* Remove o estilo padrão de lista */
+    display: flex;
+    list-style: none;
     padding: 0;
     margin: 0;
 }

@@ -19,6 +19,14 @@ onMounted(async () => {
 
 <template>
   <div :class="style.orders">
+    <div :class="style.search">
+      <input 
+        :class="style.searchInput" 
+        type="text"
+        placeholder="Busque por transações"
+      />
+      <button :class="style.searchButton">Buscar</button>
+    </div>
     <table :class="style.table">
       <thead :class="style.thead">
         <tr :class="style.tr">

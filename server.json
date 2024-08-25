@@ -1,15 +1,15 @@
 {
   "orders": [
     {
-      "order": "Marmita",
-      "price": 20,
-      "category": "comida",
-      "type": "SAIDA",
+      "order": "Venda de Site",
+      "price": 1000,
+      "category": "Trabalho",
+      "type": "ENTRADA",
       "create_at": "2024-08-24T14:32:57.162Z",
       "id": 1
     },
     {
-      "order": "Marmita",
+      "order": "Lanche",
       "price": 20,
       "category": "comida",
       "type": "SAIDA",
@@ -17,44 +17,12 @@
       "id": 2
     },
     {
-      "order": "Marmita",
-      "price": 20,
+      "order": "Batata frita",
+      "price": 10,
       "category": "comida",
       "type": "SAIDA",
-      "create_at": "2024-08-24T14:33:04.928Z",
+      "create_at": "2024-08-25T14:33:53.910Z",
       "id": 3
-    },
-    {
-      "order": "Marmita",
-      "price": 20,
-      "category": "comida",
-      "type": "SAIDA",
-      "create_at": "2024-08-24T14:33:05.180Z",
-      "id": 4
-    },
-    {
-      "order": "Marmita",
-      "price": 12,
-      "category": "Comida",
-      "type": "SAIDA",
-      "create_at": "2024-08-24T14:44:11.383Z",
-      "id": 5
-    },
-    {
-      "order": "Marmita",
-      "price": 45,
-      "category": "Comida",
-      "type": "SAIDA",
-      "create_at": "2024-08-24T14:46:31.725Z",
-      "id": 6
-    },
-    {
-      "order": "Marmita",
-      "price": 45,
-      "category": "Comida",
-      "type": "SAIDA",
-      "create_at": "2024-08-24T18:36:07.713Z",
-      "id": 7
     }
   ]
 }

@@ -9,7 +9,7 @@ table{
     width: 100%;
     border-collapse: separate;
     border-spacing: 0 0.5rem;
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     text-align: start;
 }
 
@@ -76,3 +76,38 @@ td {
     padding: 0.5rem;
 }
 
+.searchInput {
+    flex: 1;
+    background-color: var(--gray-800);
+    border: 1px solid var(--gray-300);
+    border-radius: 4px;
+    padding: 0.5rem;
+    &::placeholder {
+      color: var(--gray-300);
+    }
+}
+
+.search {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
+
+.searchButton {
+    padding: 0.5rem;
+    border: 0;
+    background: var(--pink-300);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    &:not(:disabled):hover {
+      background: var(--pink-500);
+      transition: background-color 0.2s;
+    }
+  }
